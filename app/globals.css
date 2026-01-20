@@ -283,3 +283,42 @@ label{
   background: rgba(220, 38, 38, 0.08);
   color: var(--fg);
 }
+/* =========================
+   Premium SaaS overrides
+   (mettere SEMPRE in fondo)
+   ========================= */
+
+.section .card,
+.grid .card,
+.card{
+  background: var(--card) !important;
+  border: 1px solid rgba(231,234,240,0.95) !important;
+  border-radius: calc(var(--radius) + 4px) !important;
+  padding: 20px !important;
+  box-shadow: var(--shadowSoft) !important;
+}
+
+.section .card:hover,
+.grid .card:hover,
+.card:hover{
+  transform: translateY(-1px) !important;
+  transition: transform .10s ease, box-shadow .10s ease !important;
+  box-shadow: var(--shadow) !important;
+}
+
+/* Tipografia “SaaS” dentro le card */
+.card h3{
+  font-size: 16px !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 10px !important;
+}
+
+.card ul{
+  margin: 0 !important;
+  padding-left: 18px !important;
+  color: var(--muted) !important;
+}
+
+.card li{
+  margin: 6px 0 !important;
+}

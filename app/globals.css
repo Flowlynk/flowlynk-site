@@ -3,10 +3,19 @@
   --fg:#0b1220;
   --muted:#5b6475;
   --line:#e7eaf0;
-  --card:#f7f8fb;
+
+  /* Premium SaaS surfaces */
+  --surface:#ffffff;
+  --card:#fbfcff;
+
+  /* Brand accent */
   --accent:#1f66ff;
   --accent2:#0f4bd6;
-  --shadow: 0 10px 30px rgba(11, 18, 32, 0.08);
+
+  /* Premium shadows */
+  --shadow: 0 18px 55px rgba(11, 18, 32, 0.10);
+  --shadowSoft: 0 8px 22px rgba(11, 18, 32, 0.08);
+
   --radius:16px;
   --max: 1120px;
 }
@@ -89,9 +98,15 @@ p{ margin:0 0 14px 0; color:var(--muted); }
 
 .card{
   background: var(--card);
-  border:1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 18px;
+  border: 1px solid rgba(231,234,240,0.95);
+  border-radius: calc(var(--radius) + 4px);
+  padding: 20px;
+  box-shadow: var(--shadowSoft);
+}
+.card:hover{
+  transform: translateY(-1px);
+  transition: transform .10s ease, box-shadow .10s ease;
+  box-shadow: var(--shadow);
 }
 .card h3{
   margin: 0 0 8px 0;
@@ -139,12 +154,18 @@ p{ margin:0 0 14px 0; color:var(--muted); }
 .btnPrimary{
   border-color: rgba(31, 102, 255, 0.35);
   background: var(--accent);
-  color:#fff;
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(31,102,255,0.25);
 }
 .btnPrimary:hover{
   background: var(--accent2);
+  color: #ffffff;
+  box-shadow: 0 14px 32px rgba(31,102,255,0.28);
 }
-
+.btnPrimary:visited{
+  color: #ffffff;
+}
 .kicker{
   display:flex;
   align-items:center;
@@ -168,12 +189,12 @@ p{ margin:0 0 14px 0; color:var(--muted); }
   position: sticky;
   top:0;
   z-index: 50;
-  background: rgba(255,255,255,0.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,0.90);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(231,234,240,0.9);
 }
 .headerInner{
-  height: 64px;
+  height: 72px;
   display:flex;
   align-items:center;
   justify-content: space-between;
@@ -181,7 +202,8 @@ p{ margin:0 0 14px 0; color:var(--muted); }
 }
 .logo{
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  font-size: 16px;
 }
 .logo span{
   color: var(--accent);
